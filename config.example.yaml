@@ -1,0 +1,47 @@
+mqtt:
+  broker: "tcp://localhost:1883"
+  client_id: "zaehler2mqtt"
+  username: "CHANGE_ME"
+  password: "CHANGE_ME"
+
+http:
+  listen: ":8081"
+
+meters:
+  - name: "nutzstrom"
+    device: "/dev/ttyUSB0"
+    values:
+      - obis: "1.0.1.8.0"
+        name: "Bezug"
+        device_class: "energy"
+        state_class: "total_increasing"
+        unit: "Wh"
+      - obis: "1.0.2.8.0"
+        name: "Einspeisung"
+        device_class: "energy"
+        state_class: "total_increasing"
+        unit: "Wh"
+      - obis: "1.0.16.7.0"
+        name: "Leistung"
+        device_class: "power"
+        state_class: "measurement"
+        unit: "W"
+
+  - name: "waermestrom"
+    device: "/dev/ttyUSB1"
+    values:
+      - obis: "1.0.1.8.0"
+        name: "Bezug"
+        device_class: "energy"
+        state_class: "total_increasing"
+        unit: "Wh"
+      - obis: "1.0.2.8.0"
+        name: "Einspeisung"
+        device_class: "energy"
+        state_class: "total_increasing"
+        unit: "Wh"
+      - obis: "1.0.16.7.0"
+        name: "Leistung"
+        device_class: "power"
+        state_class: "measurement"
+        unit: "W"

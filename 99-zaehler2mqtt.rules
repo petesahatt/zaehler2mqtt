@@ -1,0 +1,22 @@
+# zaehler2mqtt udev rules — stable device names for SML IR readers
+#
+# Find your adapter's vendor/product ID:
+#   lsusb
+#   Example output: Bus 001 Device 003: ID 1a86:7523 QinHeng Electronics CH340
+#
+# Find attributes for a specific device:
+#   udevadm info -a /dev/ttyUSB0 | grep -E 'idVendor|idProduct|serial'
+#
+# Common USB-serial adapters:
+#   1a86:7523  CH340/CH341 (most common for IR readers)
+#   0403:6001  FTDI FT232R
+#   067b:2303  Prolific PL2303
+#
+# If you have multiple identical adapters, distinguish by USB port:
+#   udevadm info -a /dev/ttyUSB0 | grep devpath
+# Then add ATTRS{devpath}=="..." to the rule below.
+#
+# After editing, reload rules:
+#   sudo udevadm control --reload-rules && sudo udevadm trigger
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", GROUP="dialout", MODE="0660"

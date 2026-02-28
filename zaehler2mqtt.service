@@ -1,0 +1,22 @@
+[Unit]
+Description=zaehler2mqtt - SML Smart Meter to MQTT Bridge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=zaehler2mqtt
+Group=zaehler2mqtt
+ExecStart=/usr/local/bin/zaehler2mqtt -config /etc/zaehler2mqtt/config.yaml
+Restart=always
+RestartSec=10
+
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+ReadOnlyPaths=/etc/zaehler2mqtt
+SupplementaryGroups=dialout
+
+[Install]
+WantedBy=multi-user.target
