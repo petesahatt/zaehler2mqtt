@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/eclipse/paho.mqtt.golang v1.4.3
-	github.com/petesahatt/gosml v0.0.0-20260228222239-2eea3ebe7229
+	github.com/petesahatt/gosml v0.0.2-0.20260228231832-fcbe2303c430
 	gopkg.in/yaml.v3 v3.0.1
 )
 
