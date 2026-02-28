@@ -1,5 +1,7 @@
 # zaehler2mqtt
 
+[![CI](https://github.com/petesahatt/zaehler2mqtt/actions/workflows/ci.yml/badge.svg)](https://github.com/petesahatt/zaehler2mqtt/actions/workflows/ci.yml)
+
 SML smart meter to MQTT bridge with Home Assistant auto-discovery. Reads SML data from serial IR readers and publishes meter values to an MQTT broker.
 
 ## Features
